@@ -1,6 +1,10 @@
 :root{
     --btn-color: hsl(224, 93%, 58%);
     --link-color:hsl(170, 45%, 43%);
+    --footer-color:hsl(243, 87%, 12%);
+    --second-bg-color:hsl(238, 22%, 44%);
+    --p-color: hsl(0, 0%, 75%);
+    --head: hsl(240, 75%, 98%);
 }
 
 *{
@@ -24,6 +28,7 @@ header {
     align-items: center;
 }
 .head{
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     width: 25%;
@@ -31,7 +36,6 @@ header {
 header .head div:hover{
     color: var(--btn-color);
     border-bottom: 1px solid var(--btn-color);
-
 }
 header img{
     width: 6rem;
@@ -68,7 +72,10 @@ section {
     
     justify-content: space-between;
     align-items: center;
-      padding: 2rem;
+      padding: 1rem;
+}
+section .info p{
+    font-size:17px;
 }
 section .info{
  gap: 0.5rem;
@@ -79,16 +86,20 @@ section .img{
     width: 50%;
 }
 .info h1{
-    font-size: 25px;
+    font-size: 35px;
     margin: 5px 0;
 }
 section .btn{
-    width: 10em;
+    cursor: pointer;
+    width: 12em;
     background-color:var(--btn-color) ;
     border: none;
     border-radius: 2px;
-    color: white;
+    color: var(--head);
     height: 2.5em;
+}
+section .btn:hover{
+    opacity: 0.6;
 }
 section input:first-child{
     height: 2.5em;
@@ -103,10 +114,10 @@ section input:first-child{
     section div .submit input{
         width: 100%;
     }
-    section:nth-child(3) div input{
+    section:nth-child(3) form input{
         width: 100%;
     }
-    section:nth-child(3) div {
+    section:nth-child(3) form {
         width: 100%;
     }
 }
@@ -114,7 +125,7 @@ section input:first-child{
     section{
         flex-direction: column;
         gap: 2em;
-      
+      text-align: center;
     }
     footer .foot{
         flex-direction: column;
@@ -131,17 +142,18 @@ section input:first-child{
     section div.info{
        order: 2;
     }
-    .info h1 , .info p{
-       text-align: center;
-    }
    section .link {
     text-align: center;
    }
-    
+   
+   section .info .card {
+    margin: auto;
+   }
 }
 
 section:nth-child(2){
-    margin-top: 3em;
+    margin-top: 6em;
+    margin-bottom: 6rem;
 }
 section .link a{
     text-decoration: none;
@@ -157,21 +169,25 @@ section .link img{
 }
 
 section .info .card{
-    background-color: white;
-   width: 20em;
+    background-color:var(--head);
+   width: 20rem;
    height: 14em;
    border-radius: 0.5em;
    margin-top: 2em;
    display: flex;
    padding: 1em;
    flex-direction: column;
-   box-shadow: 0 0 20px 0 hsl(0, 0%, 75%) ;
+   box-shadow: 0 0 20px 0 var(--p-color) ;
 }
  section .info .card .icon{
     width: 20px;
     height: 20px;
     margin-left: 1em;
     margin-top: 1em;
+ } 
+ section .info .card p{
+    font-size: 15px;
+    text-align: center;
  }
 section .info .photo{
     display: flex;
@@ -192,8 +208,8 @@ section .info .photo p:first-child{
  font-weight: bolder;
 }
 section:nth-child(3){
-    background-color:hsl(238, 22%, 44%) ;
-    color: white;
+    background-color:var(--second-bg-color) ;
+    color: var(--head);
 }
 section:nth-child(3) div.text{
     gap: 0.5rem;
@@ -202,9 +218,9 @@ section:nth-child(3) div.text{
 
 }
 section:nth-child(3) div.text p{
-    color: hsl(0, 0%, 75%);
+    color:var(--p-color);
 }
-section:nth-child(3) div.submit{
+section:nth-child(3) form.submit{
     display: flex;
 flex-direction: column;
 gap: 0.5em;
@@ -213,14 +229,16 @@ width: 100%;
 /* end content  */
 /* footer  */
 footer{
-    background-color: hsl(243, 87%, 12%);
+    background-color: var(--footer-color);
     padding: 3rem;
 }
-
+ footer img.logo{
+ filter:invert() brightness(50) ;
+ }
 footer .foot{
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: var(--head);
     margin: 1em;
 }
 footer ul{
@@ -245,7 +263,7 @@ margin-left: 5px;
  footer .foot .social div{
     width: 30px;
     height: 30px;
-    border: 1px solid white;
+    border: 1px solid var(--head);
 border-radius: 50%;
 display: flex;
 justify-content: center;
